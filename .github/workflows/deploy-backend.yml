@@ -33,3 +33,7 @@ jobs:
       - name: Build Docker image
         working-directory: backend
         run: docker build -t maneja-tus-gastos-backend:latest .
+
+      - name: Deploy a Render
+        run: |
+         curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
